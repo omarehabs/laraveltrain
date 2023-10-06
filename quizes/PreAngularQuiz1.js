@@ -59,4 +59,5 @@ function fizzbuzz() {
     if (!(i % 3 === 0) && i % 5 === 0) console.log("Buzz");
   }
 }
-fizzbuzz()
+fizzbuzz();
+
