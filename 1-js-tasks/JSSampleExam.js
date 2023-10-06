@@ -158,11 +158,19 @@ function convertToArr(obj) {
   //easy solution
   //return Object.entries(obj)
 
-  const keys = Object.keys(obj);
-  const values = Object.values(obj);
+  //1
+  // const keys = Object.keys(obj);
+  // const values = Object.values(obj);
 
-  return keys.map((e, i) => {
-    return [e, values[i]];
-  });
+  // return keys.map((e, i) => {
+  //   return [e, values[i]];
+  // });
+
+  //2
+  const arr2 = []
+  for(let key in obj) {
+    arr2.push([key, obj[key]])
+  }
+  return arr2
 }
 console.log(convertToArr({ 1: "one", 2: "two", 3: "three" }));
