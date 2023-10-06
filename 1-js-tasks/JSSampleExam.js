@@ -36,7 +36,10 @@ console.log(arr3); // outputs  [4,1,2,3]
   3- code snippet #3
   output = ['baz'] 
   4- code snippet #4
-  output = Error because argument is not defined
+  output = 
+          1
+          'hello'
+          true
   5- code snippet #5
   output = 
             true
@@ -49,6 +52,7 @@ console.log(arr3); // outputs  [4,1,2,3]
 // done only over own property of the object
 
 function sumObjectValues(obj) {
+
   const values = Object.entries(obj);
   let sum = 0;
   values.forEach((element) => {
@@ -84,6 +88,7 @@ asyncCodeBlocks();
  */
 
 function maxNumber(arr) {
+  console.log(arguments)
   let obj = { max: -Infinity };
   for (let n = 0; n < arr.length; n++) {
     if (arr[n] > obj.max) {
