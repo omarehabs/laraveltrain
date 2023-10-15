@@ -118,14 +118,16 @@ console.log(dateDifference('2000-01-01', '300-01-01'))
 //on the same interface.
 
 function calculator(n1, n2) {
+
   return {
-    sum: n1 + n2,
-    difference: n1 - n2,
-    product: n1 * n2,
-    dividend: n1 / n2,
+    sum : () => n1 + n2,
+    difference: () => n1 - n2,
+    product: () => n1 * n2,
+    div: () => n1 / n2,
   };
 }
-console.log(calculator(29, 5));
+const cacl = calculator(9,25)
+console.log(cacl.sum());
 
 
 //6- Write a function which can return multiple values from a function
