@@ -10,14 +10,17 @@ class Person
         $this->name = $name;
         $this->address = $address;
     }
+    
     public function getName(): string
     {
         return $this->name;
     }
+
     public function getAddress(): string
     {
         return $this->address;
     }
+
     public function setAddress(string $address): void
     {
         $this->address = $address;
