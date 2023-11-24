@@ -1,14 +1,14 @@
 <?php
 
-    require_once 'includes/db.php';
+require_once 'includes/db.php';
 
-    $selctedStudent = "SELECT * FROM todos WHERE finished=1 ";
-    $result = mysqli_query($conn, $selctedStudent);
+$selctedStudent = "SELECT * FROM todos WHERE finished=0 ";
+$result = mysqli_query($conn, $selctedStudent);
 
-    
 
-    $done = "SELECT * FROM todos WHERE finished=0 ";
-    $done_todos = mysqli_query($conn, $done);
+
+$done = "SELECT * FROM todos WHERE finished=1 ";
+$done_todos = mysqli_query($conn, $done);
 
 
 
@@ -42,7 +42,23 @@
 
 
             <?php } ?>
+
         </ul>
+
+        <br />
+        <div class="alert alert-secondary m-4 py-3 text-center">
+            <h2> Done Tasks </h2>
+        </div>
+        <ul class="list-group">
+            <?php
+            while ($row = mysqli_fetch_assoc($done_todos)) {
+            ?>
+                <li class="list-group-item"> <?php echo $row['task'] ?>
+                </li>
+            <?php } ?>
+
+        </ul>
+
         </section>
     </div>
 </body>
