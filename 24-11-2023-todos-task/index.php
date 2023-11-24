@@ -1,9 +1,16 @@
 <?php
 
-require_once 'includes/db.php';
+    require_once 'includes/db.php';
 
-$selctedStudent = "SELECT * FROM todos WHERE finished=1 ";
-$result = mysqli_query($conn, $selctedStudent);
+    $selctedStudent = "SELECT * FROM todos WHERE finished=1 ";
+    $result = mysqli_query($conn, $selctedStudent);
+
+    
+
+    $done = "SELECT * FROM todos WHERE finished=0 ";
+    $done_todos = mysqli_query($conn, $done);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -29,14 +36,13 @@ $result = mysqli_query($conn, $selctedStudent);
             ?>
                 <li class="list-group-item">task : <?php echo $row['task'] ?>
 
-                    <a type="button" class="btn btn-primary">delete</a>
-                    <a type="button" class="btn btn-success">edit</a>
+                    <a href="delete-todo.php?id=<?php echo $row["id"] ?>" class="btn btn-primary" type="button">delete</a>
+                    <a href="edit-todo.php?id=<?php echo $row["id"] ?>" type="button" class="btn btn-success">edit</a>
                 </li>
 
 
             <?php } ?>
         </ul>
-        <a href="index.php" class="mt-2">Return to home</a>
         </section>
     </div>
 </body>
