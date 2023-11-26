@@ -22,7 +22,7 @@
         <h3>Student Address : <?php echo $std['address'] ?> </h3>
         <a href="index.php" class="mt-2">Return to home</a>
     </section>
-
+    ?>
 <?php include_once 'includes/footer.php' ?>
 
 </body>
